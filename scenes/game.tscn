@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ppslau7rgsrs"]
+[gd_scene load_steps=36 format=3 uid="uid://cio7uo5f501x1"]
 
 [ext_resource type="Texture2D" uid="uid://brrt6trbcsu48" path="res://assets/backgrounds/ghibli_background.png" id="1_7fx1v"]
 [ext_resource type="Texture2D" uid="uid://bi3mp56weugp" path="res://assets/external/sprites/world_tileset.png" id="3_cbqeg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://drb8qwyopo4vl" path="res://assets/tilesets/Grass 2.0.png" id="8_gi4xf"]
 [ext_resource type="Texture2D" uid="uid://cwin8mwtveel5" path="res://assets/tilesets/Tree 2.0.png" id="9_j1fo2"]
 [ext_resource type="PackedScene" uid="uid://dtai2y2xmjlrc" path="res://scenes/day_night.tscn" id="12_38opa"]
+[ext_resource type="Script" path="res://scripts/day_night.gd" id="13_62mmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dvutw"]
 texture = ExtResource("4_4ejah")
@@ -1188,4 +1189,4 @@ position = Vector2(-496, 185)
 texture = ExtResource("7_ranas")
 
 [node name="DayNight" parent="." instance=ExtResource("12_38opa")]
-color = Color(1, 1, 1, 1)
+script = ExtResource("13_62mmg")
