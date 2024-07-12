@@ -6,10 +6,6 @@ const JUMP_VELOCITY = -500.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-#@onready var wizard: Sprite2D = $Wizard
-@onready var animated_sprite: AnimatedSprite2D = $Knight
-@onready var monsieur: AnimatedSprite2D = $Monsieur
-
 @onready var hand = $Hand
 @onready var item: Pickaxe = $Pickaxe
 
@@ -71,15 +67,15 @@ func _physics_process(delta):
 
 	# Which direction sprite faces
 	flip_character(direction)
-#
-	## Play animations
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
+
+	### Play animations
+	#if is_on_floor():
+		#if direction == 0:
+			#animated_sprite.play("idle")
+		#else:
+			#animated_sprite.play("run")
+	#else:
+		#animated_sprite.play("jump")
 
 	if direction:
 		velocity.x = direction * SPEED

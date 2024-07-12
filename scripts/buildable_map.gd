@@ -18,9 +18,9 @@ func erase_block_in_world(point: Vector2i) -> bool:
 	if DEBUG:
 		print_debug("Removing cell at ", point)
 
-	#erase_cell(1, point)
-	var cell_array: Array[Vector2i] = [point]
-	set_cells_terrain_connect(1, cell_array, 0, -1)
+	erase_cell(1, point)
+	#var cell_array: Array[Vector2i] = [point]
+	#set_cells_terrain_connect(1, cell_array, 0, -1)
 	return true
 
 func add_block_in_world(point: Vector2i) -> bool:
@@ -30,7 +30,7 @@ func add_block_in_world(point: Vector2i) -> bool:
 	if DEBUG:
 		print_debug("Adding cell at ", point)
 
-	#set_cell(1, point, 0, Vector2i(0, 0))
-	var cell_array: Array[Vector2i] = [point]
-	set_cells_terrain_connect(1, cell_array, 0, 0)
+	set_cell(1, point, 0, Vector2i(4, 1))
+	#var cell_array: Array[Vector2i] = [point]
+	#set_cells_terrain_connect(1, cell_array, 0, 0)
 	return true
