@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://baup8ypg5vsss"]
+
+[ext_resource type="PackedScene" uid="uid://bxp7xivpnggwo" path="res://items/pickaxe/pickaxe.tscn" id="1_qbj86"]
+[ext_resource type="Script" path="res://items/item_base/item_data.gd" id="2_ohma3"]
+
+[resource]
+script = ExtResource("2_ohma3")
+name = "pickaxe"
+scene = ExtResource("1_qbj86")
