@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cio7uo5f501x1"]
+[gd_scene load_steps=27 format=3 uid="uid://cio7uo5f501x1"]
 
 [ext_resource type="Script" path="res://world/time_weather/day_night.gd" id="2_g1ybo"]
 [ext_resource type="Texture2D" uid="uid://cpf01axbu1mpr" path="res://world/backgrounds/2.png" id="3_g107y"]
 [ext_resource type="Shader" path="res://world/shaders/wind.gdshader" id="4_47vmx"]
 [ext_resource type="Texture2D" uid="uid://cq3l2jq4v7ljw" path="res://world/tilesets/Tileset1.png" id="5_nnc5q"]
 [ext_resource type="Texture2D" uid="uid://dqu3vme65ulkw" path="res://world/common/Stones.png" id="6_oyauo"]
+[ext_resource type="Texture2D" uid="uid://cm22mv4efcigp" path="res://world/common/Stones_normal.png" id="6_rcmby"]
 [ext_resource type="Script" path="res://world/buildable_map.gd" id="7_3wcoe"]
 [ext_resource type="PackedScene" uid="uid://dm4cqrie7qeva" path="res://entities/player/player.tscn" id="8_l546n"]
 [ext_resource type="PackedScene" uid="uid://bxp7xivpnggwo" path="res://items/pickaxe/pickaxe.tscn" id="8_n50a8"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cuu1dukdpecpj" path="res://items/lantern/2d_lights_and_shadows_neutral_point_light.webp" id="13_22f5x"]
 [ext_resource type="PackedScene" uid="uid://cv1deeo7ftpu1" path="res://items/item_base/item_base.tscn" id="14_rk5rt"]
 [ext_resource type="Resource" uid="uid://baup8ypg5vsss" path="res://items/pickaxe/pickaxe.tres" id="15_by51x"]
+[ext_resource type="Texture2D" uid="uid://dhmqlp3ijnjak" path="res://world/common/Stones 2.0.png" id="17_1muak"]
 
 [sub_resource type="Animation" id="Animation_4ebya"]
 length = 0.001
@@ -273,6 +275,21 @@ texture = ExtResource("6_oyauo")
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qgi5"]
+texture = ExtResource("6_rcmby")
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_ky65p"]
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
@@ -281,6 +298,11 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_ppr38")
 sources/1 = SubResource("TileSetAtlasSource_bf60x")
+sources/2 = SubResource("TileSetAtlasSource_8qgi5")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wkb2l"]
+diffuse_texture = ExtResource("17_1muak")
+normal_texture = ExtResource("6_rcmby")
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(435, 633)
@@ -402,6 +424,7 @@ position = Vector2(-491, 331)
 texture = ExtResource("12_tst8m")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights/Lantern2"]
+position = Vector2(13, 16)
 color = Color(1, 0.804, 0.44, 1)
 range_z_max = 0
 texture = ExtResource("13_22f5x")
@@ -413,3 +436,7 @@ position = Vector2(435, 633)
 [node name="Item" parent="." instance=ExtResource("14_rk5rt")]
 position = Vector2(-7, 17)
 item_data = ExtResource("15_by51x")
+
+[node name="RockWithNormals" type="Sprite2D" parent="."]
+position = Vector2(-991, -254)
+texture = SubResource("CanvasTexture_wkb2l")

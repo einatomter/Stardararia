@@ -7,11 +7,14 @@ extends ItemUseable
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var pivot_point: Marker2D = $PivotPoint
 
+# TODO list:
+# move animation to player character
+
 func _activate() -> bool:
 	# Override item cooldown to take into account animation play time
 	animation_player.current_animation = "mine"
 	var animation_length:= animation_player.current_animation_length
-	item_cooldown_current = (item_cooldown + animation_length)/speed_multiplier
+	time_cooldown_current = (time_cooldown + animation_length)/speed_multiplier
 
 	# Get mouse position relative to the world grid
 	var mouse_pos_global := get_global_mouse_position()
