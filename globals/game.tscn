@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cio7uo5f501x1"]
+[gd_scene load_steps=25 format=3 uid="uid://cio7uo5f501x1"]
 
 [ext_resource type="Script" path="res://world/time_weather/day_night.gd" id="2_g1ybo"]
 [ext_resource type="Texture2D" uid="uid://cpf01axbu1mpr" path="res://world/backgrounds/2.png" id="3_g107y"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cuu1dukdpecpj" path="res://items/lantern/2d_lights_and_shadows_neutral_point_light.webp" id="13_22f5x"]
 [ext_resource type="PackedScene" uid="uid://cv1deeo7ftpu1" path="res://items/item_base/item_base.tscn" id="14_rk5rt"]
 [ext_resource type="Resource" uid="uid://baup8ypg5vsss" path="res://items/pickaxe/pickaxe.tres" id="15_by51x"]
-[ext_resource type="Texture2D" uid="uid://dhmqlp3ijnjak" path="res://world/common/Stones 2.0.png" id="17_1muak"]
 
 [sub_resource type="Animation" id="Animation_4ebya"]
 length = 0.001
@@ -300,10 +299,6 @@ sources/0 = SubResource("TileSetAtlasSource_ppr38")
 sources/1 = SubResource("TileSetAtlasSource_bf60x")
 sources/2 = SubResource("TileSetAtlasSource_8qgi5")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_wkb2l"]
-diffuse_texture = ExtResource("17_1muak")
-normal_texture = ExtResource("6_rcmby")
-
 [node name="Node2D" type="Node2D"]
 position = Vector2(435, 633)
 
@@ -320,6 +315,7 @@ offset_right = 1138.0
 offset_bottom = 640.0
 color = Color(0.431373, 0.866667, 1, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="DayNight/ParallaxBackground"]
 position = Vector2(-47, 231)
@@ -333,6 +329,7 @@ texture = ExtResource("3_g107y")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 324)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="DayNight/ParallaxBackground/ParallaxLayer2"]
 offset_left = -32.0
@@ -340,6 +337,7 @@ offset_top = 228.0
 offset_right = 1122.0
 offset_bottom = 868.0
 color = Color(0.262745, 0.560784, 0.423529, 1)
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DayNight"]
 root_node = NodePath("../..")
@@ -371,7 +369,6 @@ editor_draw_limits = true
 
 [node name="Pickaxe" parent="Player" node_paths=PackedStringArray("world") instance=ExtResource("8_n50a8")]
 world = NodePath("../../TileMap")
-speed_multiplier = 2.0
 
 [node name="Foliage" type="Node" parent="."]
 
@@ -436,7 +433,3 @@ position = Vector2(435, 633)
 [node name="Item" parent="." instance=ExtResource("14_rk5rt")]
 position = Vector2(-7, 17)
 item_data = ExtResource("15_by51x")
-
-[node name="RockWithNormals" type="Sprite2D" parent="."]
-position = Vector2(-991, -254)
-texture = SubResource("CanvasTexture_wkb2l")

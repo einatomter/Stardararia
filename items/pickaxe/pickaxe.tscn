@@ -20,7 +20,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_h4kpo"]
 resource_name = "mine"
-length = 0.2
 step = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -31,7 +30,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0, 0, 0, 0, 0, 1.49891, -0.243, 1.45826, 0, 0, -1.31961, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.199, 0.2)
+"times": PackedFloat32Array(0, 0.99, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmmw2"]
@@ -51,9 +50,10 @@ position = Vector2(-8, -8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_70vga")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPickaxe" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wmmw2")
 }
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="item_state_updated" from="." to="." method="_on_item_state_updated"]
+[connection signal="animation_finished" from="AnimationPickaxe" to="." method="_on_animation_player_animation_finished"]

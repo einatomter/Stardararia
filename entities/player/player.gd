@@ -8,15 +8,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var hand = $Hand
 @onready var item: Pickaxe = $Pickaxe
-#@onready var item: Pickaxe = null
 
 enum ENUM_ITEM_STATE {INACTIVE, ACTIVE, ACTIVE_ALT}
 var item_state: ENUM_ITEM_STATE
 
 func _ready():
-	# Place tool at hand location
+	# Add tool as child to hand
 	if item != null:
-		item.position = hand.position
+		remove_child(item)
+		hand.add_child(item)
 
 func _input(event):
 	if item == null:
